@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover True Beauty</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+    
+    <div class="container">
+        <h1 class="title">Discover the Most Beautiful Person on Earth</h1>
+        <p class="subtitle">Are you ready to see true beauty?</p>
+        
+        <button id="revealBtn" class="reveal-btn">
+            <span>Reveal Beauty</span>
+            <i class="fas fa-heart"></i>
+        </button>
+        
+        <div id="cameraContainer" class="camera-container">
+            <div class="polaroid-frame">
+                <video id="video" autoplay playsinline></video>
+                <div class="polaroid-label">The Most Beautiful</div>
+            </div>
+            <button id="captureBtn" class="capture-btn">
+                <i class="fas fa-camera"></i> Capture This Moment
+            </button>
+        </div>
+        
+        <div id="result" class="result-message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

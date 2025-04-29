@@ -1,0 +1,262 @@
+/* Fonts and Base Styles */
+body {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #fff5f5 0%, #f8e8e8 100%);
+    color: #5e2b2b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Floating Hearts Animation */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.heart {
+    position: absolute;
+    opacity: 0;
+    color: rgba(255, 105, 140, 0.6);
+    animation: float 15s linear infinite;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    top: 10%;
+    font-size: 20px;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 70%;
+    top: 20%;
+    font-size: 28px;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 30%;
+    top: 50%;
+    font-size: 24px;
+    animation-delay: 4s;
+}
+
+.heart:nth-child(4) {
+    left: 80%;
+    top: 60%;
+    font-size: 32px;
+    animation-delay: 6s;
+}
+
+.heart:nth-child(5) {
+    left: 50%;
+    top: 80%;
+    font-size: 18px;
+    animation-delay: 8s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography */
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    background: linear-gradient(to right, #ff6b8a, #ff8e53);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #8a4b4b;
+}
+
+/* Buttons */
+.reveal-btn {
+    position: relative;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(45deg, #ff6b8a, #ff8e53);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 140, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reveal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 105, 140, 0.4);
+}
+
+.reveal-btn:active {
+    transform: translateY(1px);
+}
+
+.reveal-btn i {
+    transition: transform 0.3s ease;
+}
+
+.reveal-btn:hover i {
+    transform: scale(1.2);
+}
+
+/* Camera Container */
+.camera-container {
+    margin-top: 2rem;
+    display: none;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Polaroid Frame Effect */
+.polaroid-frame {
+    background: white;
+    padding: 1rem 1rem 3rem 1rem;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.polaroid-frame:hover {
+    transform: rotate(0deg);
+}
+
+.polaroid-label {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: #8a4b4b;
+    font-size: 1rem;
+}
+
+video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 2px;
+    display: block;
+}
+
+/* Capture Button */
+.capture-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(45deg, #6b8aff, #53b3ff);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(107, 138, 255, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.capture-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(107, 138, 255, 0.4);
+}
+
+.capture-btn i {
+    transition: transform 0.3s ease;
+}
+
+.capture-btn:hover i {
+    transform: scale(1.1);
+}
+
+/* Result Message */
+.result-message {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    max-width: 500px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-left: 4px solid #ff6b8a;
+}
+
+.result-message.show {
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .reveal-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
